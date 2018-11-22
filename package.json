@@ -5,6 +5,7 @@
         "node": "8.11.1"
     },
     "dependencies": {
+        "mongodb": "^2.2.26",
         "express": "^4.15.2"
     }
 }
