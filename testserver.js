@@ -25,8 +25,8 @@ app.get('/test', function(req, res) {
             res.status(500).send("error");
             console.log("Error");
         } else if(obj == null) {
-            res.status(204).send();
-            console.log("Name is null");
+            res.status(200).send("null");
+            console.log("Kunde inte hitta något i databasen");
         } else {
             res.status(200).send(obj.name);
             console.log("Yaaay!");
