@@ -12,7 +12,7 @@ mongo.connect('mongodb://kuriosa:kuriosa123@ds233763.mlab.com:33763/kuriosatest'
         console.log(err);
     }
     db = database;
-    console.log("Connected to mongo?");
+    console.log("Connected to mongo");
 });
 
 app.get('/test', function(req, res) {
@@ -25,7 +25,7 @@ app.get('/test', function(req, res) {
             res.status(500).send("error");
             console.log("Error");
         } else if(obj == null) {
-            res.status(401).send("null");
+            res.status(204).send();
             console.log("Name is null");
         } else {
             res.status(200).send(obj.name);
