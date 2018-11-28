@@ -42,7 +42,7 @@ app.get('/', function(req, res) {
 app.post('/new', function(req, res) {
     console.log("Trying to save new barcode");
     var obj = req.body;
-    db.collection.insert(obj).then(function(result) {
+    db.collection('test').insert(obj).then(function(result) {
         if(result) {
             res.status(201).send({});
         } else {
