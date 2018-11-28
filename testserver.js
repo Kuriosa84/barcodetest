@@ -1,9 +1,12 @@
 var express = require('express');
 var mongo = require('mongodb').MongoClient;
 var port = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
 
 var app = express();
 
+app.use(bodyParser.json({limit: '5mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 //var server = require('http').Server(app);
 var db;
 
