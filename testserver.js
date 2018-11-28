@@ -22,10 +22,10 @@ app.get('/test', function(req, res) {
 
     db.collection('test').findOne({barcode: code}, function(err, obj) {
         if(err) {
-            res.status(500).send(err);
+            res.status(500).send("error");
             console.log("Error");
         } else if(obj == null) {
-            res.status(401).send({});
+            res.status(401).send("null");
             console.log("Name is null");
         } else {
             res.status(200).send(obj.name);
