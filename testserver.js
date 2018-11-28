@@ -39,6 +39,18 @@ app.get('/', function(req, res) {
     console.log("Testar");
 });
 
+app.post('/new', function(req, res) {
+    console.log("Trying to save new barcode");
+    var obj = req.body;
+    db.collection.insert(obj).then(function(result) {
+        if(result) {
+            res.status(201).send({});
+        } else {
+            res.status(400).send({});
+        }
+    });
+});
+
 app.listen(port, function() {
     // Listening on port
     console.log("Listening on port 3000");
